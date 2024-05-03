@@ -7,24 +7,27 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.networkmathgame.HelloController">
+<?import java.net.URL?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.networkmathgame.HelloController" styleClass="panel-primary">
+    <stylesheets>
+        <URL value="@bootstrapfx.css"/>
+    </stylesheets>
     <HBox spacing="150" alignment="CENTER">
-        <Label fx:id="scorePlayer1" text="Player 1: 0" style="-fx-font-size: 20;">
+        <Label fx:id="scorePlayer1" text="Player 1: 0" styleClass="label-success, lead" style="-fx-font-size: 20;">
             <HBox.margin>
                 <Insets left="10" />
             </HBox.margin>
         </Label>
-        <Label fx:id="scorePlayer2" text="Player 2: 0" style="-fx-font-size: 20;">
+        <Label fx:id="scorePlayer2" text="Player 2: 0" styleClass="label-success, lead" style="-fx-font-size: 20;">
             <HBox.margin>
                 <Insets right="10" />
             </HBox.margin>
         </Label>
     </HBox>
-    <Label fx:id="questionLabel" text="Question" style="-fx-font-size: 34;" />
+    <Label fx:id="questionLabel" text="Question" styleClass="label-info, lead" style="-fx-font-size: 34;" />
     <HBox spacing="10" alignment="CENTER">
-        <Button fx:id="answerButton1" text="Option 1" onAction="#handleAnswer" style="-fx-font-size: 16;"/>
-        <Button fx:id="answerButton2" text="Option 2" onAction="#handleAnswer" style="-fx-font-size: 16;"/>
-        <Button fx:id="answerButton3" text="Option 3" onAction="#handleAnswer" style="-fx-font-size: 16;"/>
-
+        <Button fx:id="answerButton1" text="Option 1" onAction="#handleAnswer" styleClass="btn, btn-primary, btn-lg" style="-fx-font-size: 16;"/>
+        <Button fx:id="answerButton2" text="Option 2" onAction="#handleAnswer" styleClass="btn, btn-primary, btn-lg" style="-fx-font-size: 16;"/>
+        <Button fx:id="answerButton3" text="Option 3" onAction="#handleAnswer" styleClass="btn, btn-primary, btn-lg" style="-fx-font-size: 16;"/>
     </HBox>
 </VBox>
