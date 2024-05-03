@@ -46,7 +46,7 @@ public class HelloController {
             while ((message = reader.readLine()) != null) {
                 if (message.startsWith("Question: ")) {
                     updateQuestion(message.substring(10));
-                } else if (message.startsWith("Score")) {
+                } else if (message.startsWith("Player")) {
                     updateScores(message);
                 }
             }
