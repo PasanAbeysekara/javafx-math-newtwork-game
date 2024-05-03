@@ -87,7 +87,7 @@ public class HelloController {
         switch (operator) {
             case "+": return number1 + number2;
             case "-": return number1 - number2;
-            case "*": return number1 * number2;
+            case "x": return number1 * number2;
             case "/": return number1 / number2; // Make sure to handle division by zero elsewhere
             default: throw new IllegalArgumentException("Invalid operator");
         }
