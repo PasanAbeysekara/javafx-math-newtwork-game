@@ -41,6 +41,13 @@ public class HelloController {
         receiveThread.start();
     }
 
+    private void resetScores() {
+        javafx.application.Platform.runLater(() -> {
+            scorePlayer1.setText("Player 1: 0");
+            scorePlayer2.setText("Player 2: 0");
+        });
+    }
+
     private void receiveMessages() {
         try {
             String message;
@@ -48,11 +55,16 @@ public class HelloController {
                 final String msg = message;
                 javafx.application.Platform.runLater(() -> {
                     if (msg.startsWith("Question: ")) {
+                        if (questionLabel.getText().startsWith("Game Over")) {
+                            resetScores();  // Reset scores when a new game starts after "Game Over"
+                        }
                         updateQuestion(msg.substring(10));
                     } else if (msg.startsWith("Player")) {
                         updateScores(msg);
                     } else if (msg.contains("Do you want to play again?")) {
                         showReplayDialog();
+                    } else if (msg.contains("New game starting...")) {
+                        resetScores();  // Reset scores upon receiving the new game start message
                     } else {
                         questionLabel.setText(msg);
                     }
